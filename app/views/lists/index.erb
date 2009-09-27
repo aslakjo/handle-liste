@@ -1,0 +1,18 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+Welcome
+
+<div><%= link_to "Add a new list", new_list_path %></div>
+<div></div>
+<div></div>
+
+<p>
+<div>List already in the system</div>
+<% @lists.each do |list| %>
+  <div><%= link_to list.name.to_s, list_path(list.key) %> <%= link_to '[X]', list_path(list.key), :method => :delete, :confirm => 'Are you sure?' %>
+ </div>
+<% end %>
+</p>

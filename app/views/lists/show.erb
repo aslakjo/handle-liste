@@ -1,0 +1,10 @@
+<h2><%= @list.name %> </h2>
+<p>Items:</p>
+<ul>
+  <% @list.not_bougth_items.each do |item| %>
+    <li><%= item.content %> <%= link_to "[Buy]", buy_list_item_path(@list.key, item.key) %> </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "New item", new_list_item_path(@list.key) %> </p>
+<p><%= link_to "Back", lists_path %></p>
